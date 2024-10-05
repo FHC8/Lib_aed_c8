@@ -1,0 +1,26 @@
+##########################################
+# Syntax Coloring Map For Example
+###########################################
+
+###########################################
+# Datatypes (KEYWORD1)
+###########################################
+
+Deco2a4	KEYWORD1
+Deco3a8	KEYWORD1
+Deco7seg	KEYWORD1
+MedioSum1bit	KEYWORD1
+Sum1bit	KEYWORD1
+Sum4bit	KEYWORD1
+
+###########################################
+# Methods and Functions (KEYWORD2)
+###########################################
+
+conectar	KEYWORD2
+configurar	KEYWORD2
+mostrar	KEYWORD2
+
+###########################################
+# Constants (LITERAL1)
+###########################################
