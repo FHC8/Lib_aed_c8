@@ -37,14 +37,14 @@ Se pueden usar directamente en PC como en Arduino. Debe tener en cuenta los `#de
 * Un **BCD** es un numero de **4 Bit**
   * por lo tanto el BINARIO tambien debe ser de 4 bit
 * De **0 a 4** el **BCD-AIKEN** es **igual** al **BINARIO NATURAL**
-  * EJEMPLO. **4:0100** (binario) \f$\Rightarrow\f$ **0100** (AIKEN)
+  * EJEMPLO. **4:0100** (binario) --> **0100** (AIKEN)
 * De **5 a 9** el **BCD-AIKEN** es el **BINARIO** pero **excedido en 6**.
-  * EJEMPLO. **5:0101** (binario) \f$\Rightarrow\f$ **1011** (AIKEN) (que es el binario de **11** osea **5+6**)
+  * EJEMPLO. **5:0101** (binario) --> **1011** (AIKEN) (que es el binario de **11** osea **5+6**)
 
 <u>Una posible solucion</u>
 * Si el **BINARIO** que ingresa es...
-  * mayor que **4** \f$\Rightarrow\f$ le sumo 6 (**selecciono el 6** para sumar)
-  * en caso contrario \f$\Rightarrow\f$ le sumo 0 (**selecciono el 0** para sumar)
+  * mayor que **4** --> le sumo 6 (**selecciono el 6** para sumar)
+  * en caso contrario --> le sumo 0 (**selecciono el 0** para sumar)
 * El **resultado** de la **suma** es el **BCD-AIKEN**
 
 
