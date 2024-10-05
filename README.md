@@ -4,10 +4,10 @@ Conjunto de herramientas, elaboradas en C/C++. Destinadas a las clases practicas
 
 Se pueden usar directamente en PC como en Arduino. Debe tener en cuenta los `#define` adecuados para cada compilador.
 
-## \emoji :speech_balloon: Recomendaciones
+## :speech_balloon: Recomendaciones
 
 1. Confeccionar el diagrama de bloque con los modulos de proposito general (nivel 2)
-   1. tomar nota tanto del \emoji :pencil:
+   1. tomar nota tanto del :pencil:
       1. sistema a construir (diagrama de nivel 0), 
       2. de lo que deberiamos saber y 
       3. de como cree que se resuelve el problema
@@ -16,8 +16,8 @@ Se pueden usar directamente en PC como en Arduino. Debe tener en cuenta los `#de
    4. en lo posible que se vea claramente el flujo de las etapas de...
       1. Izquierda a Derecha
       2. Arriba hacia Abajo
-2. Confeccionar el codigo \emoji :computer:
-   1. teniendo en cuenta la documentacion \emoji :books:
+2. Confeccionar el codigo :computer:
+   1. teniendo en cuenta la documentacion :books:
    2. de arriba hacia abajo segun los niveles de conexion
 
 ## Ejemplo: Convertir un **BINARIO** a **BCD-AIKEN**
@@ -62,9 +62,9 @@ Se pueden usar directamente en PC como en Arduino. Debe tener en cuenta los `#de
 </center>
 
 
-## \emoji :computer: Confeccion de codigo en **C/C++**
+## :computer: Confeccion de codigo en **C/C++**
 
-\emoji :floppy_disk: **Binario a BCD-AIKEN**:
+:floppy_disk: **Binario a BCD-AIKEN**:
 
 ```C
 #include <common_type_c8.h>
@@ -113,7 +113,7 @@ for(binario.valor=0;binario.valor<10;binario.valor++){
 
 ---
 
-\emoji :arrow_forward: Resultado por linea de comandos
+:arrow_forward: Resultado por linea de comandos
 
 ```
 BINARIO -> AIKEN ?

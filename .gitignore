@@ -35,6 +35,9 @@
 docs/
 output/
 
+# Doxigen
+READMEdoxy.md
+
 # VSCode globals
 .vscode/*
 !.vscode/settings.json
