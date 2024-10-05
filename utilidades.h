@@ -1,6 +1,6 @@
 /**
  * @file utilidades.h
- * @author your name (you@domain.com)
+ * @author Cochini Felix H (felixhcochini@gmail.com)
  * @brief 
  * @version 0.1
  * @date 2024-07-23
