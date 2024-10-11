@@ -14,6 +14,10 @@
 /**
  * @brief tipo de variable
  */
+typedef unsigned int PIN;
+/**
+ * @brief tipo de variable
+ */
 typedef unsigned int ENTERO;
 /**
  * @brief tipo de variable
@@ -80,6 +84,14 @@ los_campos_desde_0\
 }nombre;
 
 #define conjuntox(los_campos_desde_0) conjunto(los_campos_desde_0,)
+
+#define define_bus(nombre,los_bits_desde_0) \
+union {\
+    PUERTO bus;\
+    struct {\
+        los_bits_desde_0\
+    };\
+} nombre
 
 /**
  * @brief definicion de un bus a medida
@@ -241,6 +253,10 @@ typedef union
 typedef union 
 {
     dport(bus,8)
+    struct {
+        dport(nibbleL,4)
+        dport(nibbleH,4)
+    };
     struct {
         dbit(b0)
         dbit(b1)

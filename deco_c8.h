@@ -202,6 +202,8 @@ class Deco7seg : public Info_c8, public Terminal_c8{
          * @param D Entrada 
          */
         void conectar(ENTRADA A,ENTRADA B,ENTRADA C,ENTRADA D);
+
+        void conectar(BUS ABCD);
         /**
          * @brief 
          * 

@@ -192,6 +192,19 @@ void Deco7seg::conectar(ENTRADA A,ENTRADA B,ENTRADA C,ENTRADA D)
         default: salida.port=0b0000001;break;
     }
 }
+
+void Deco7seg::conectar(BIT4 entrada)
+{
+    conectar(entrada.b3, entrada.b2, entrada.b1, entrada.b0);
+}
+
+void Deco7seg::conectar(BUS ABCD)
+{
+    BIT4 entrada;
+    entrada.bus=ABCD;
+    conectar(entrada);
+}
+
 void Deco7seg::mostrar(SALIDA pa, SALIDA pb, SALIDA pc, SALIDA pd, SALIDA pe, SALIDA pf, SALIDA pg)
 {
     escribir(pa,salida.a);
@@ -203,10 +216,7 @@ void Deco7seg::mostrar(SALIDA pa, SALIDA pb, SALIDA pc, SALIDA pd, SALIDA pe, SA
     escribir(pg,salida.g);
 }
 
-void Deco7seg::conectar(BIT4 entrada)
-{
-    conectar(entrada.b3, entrada.b2, entrada.b1, entrada.b0);
-}
+
 
 void Deco7seg::mostrar()
 {

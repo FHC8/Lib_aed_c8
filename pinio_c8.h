@@ -11,6 +11,7 @@
 #ifndef _PINIO_C8_H
 #define _PINIO_C8_H
 #include "common_type_c8.h"
+#include <stdio.h>
 
 /**
  * @brief Comentar para implementacion con Arduino
@@ -154,4 +155,31 @@
  */
 #define enBajoPin(variable) enBajo(pin##variable)
 
+
+template<int cantidadDePines>
+class Arduiniable {
+protected:
+    PIN pinSalida[cantidadDePines];
+public:
+  Arduiniable(){
+    for(int i=0;i<cantidadDePines;i++){pinSalida[i]=0;}
+  }
+  void actualizar(SALIDA bus){
+    for(int i=0;i<cantidadDePines;i++){
+#ifndef test_c8
+        escribir(pinSalida[i],((bus>>i)&0x00000001));
+#else
+        printf("pin: %2d -> salida: %d\n", pinSalida[i], ((bus>>i)&0x00000001));
 #endif
+    }
+  }
+};
+
+
+
+
+
+
+
+#endif
+
