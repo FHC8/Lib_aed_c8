@@ -11,6 +11,8 @@
 #ifndef _COMMON_TYPE_C8_H
 #define _COMMON_TYPE_C8_H
 
+
+
 /**
  * @brief tipo de variable
  */
@@ -47,6 +49,13 @@ typedef unsigned int BUS;
  * @brief tipo de variable
  */
 typedef unsigned int CAMPO;
+
+/**
+ * @brief tipo de variable
+ */
+typedef unsigned long DATO;
+
+
 /**
  * @brief definicion de un campo de 1 bit
  * para uso exclusivo en estructuras.
@@ -289,6 +298,8 @@ typedef union
     };
 } BIT10;
 
+
+#ifdef test_c8 // en PC
 /**
  * @brief bus de 32 bit generico
  * 
@@ -375,5 +386,95 @@ struct {
     CAMPO signo:1; /**< bit de signo */
 };    
 } IEEE_754_t;
+
+#else
+/**
+ * @brief bus de 32 bit generico
+ * 
+ * @code {.c}
+ * BIT32 bus;           // Declaro una variable bus de 32 bit
+ * bus.valor = 128;     // Ponemos el valor 128 en el bus
+ * bus.b5 = 1;          // Ponemos un 1 en el bit del bus => bus tiene 160
+ * unavar = bus.b1      // Obtengo el bit 1 del bus, unavar <- 0
+ * otravar = bus.valor  // otravar <- 160
+ * @endcode 
+ * 
+ * @note BIT32 es un tipo de dato como cualquier otro, entonces 
+ * de la misma forma que declaras un **int** o **float**. Es 
+ * necesario hacerlo antes de poder usar una variable de este tipo.
+ * 
+ * 
+ */
+typedef union 
+{
+    unsigned long valor; /**< valor de 32 bit */
+    struct {
+      dport(byte0,8)  
+      dport(byte1,8)  
+      dport(byte2,8)  
+      dport(byte3,8)  
+    };
+    struct {
+        dport(nibble0L,4)
+        dport(nibble0H,4)
+        dport(nibble1L,4)
+        dport(nibble1H,4)
+        dport(nibble2L,4)
+        dport(nibble2H,4)
+        dport(nibble3L,4)
+        dport(nibble3H,4)
+    };
+    struct {
+        dbit(b0) /**< bit 0 */
+        dbit(b1) /**< bit 1 */
+        dbit(b2) /**< bit 2 */
+        dbit(b3) /**< bit 3 */
+        dbit(b4) /**< bit 4 */
+        dbit(b5) /**< bit 5 */
+        dbit(b6) /**< bit 6 */
+        dbit(b7) /**< bit 7 */
+        dbit(b8) /**< bit 8 */
+        dbit(b9) /**< bit 9 */
+        dbit(b10) /**< bit 10 */
+        dbit(b11) /**< bit 11 */
+        dbit(b12) /**< bit 12 */
+        dbit(b13) /**< bit 13 */
+        dbit(b14) /**< bit 14 */
+        dbit(b15) /**< bit 15 */
+        dbit(b16) /**< bit 16 */
+        dbit(b17) /**< bit 17 */
+        dbit(b18) /**< bit 18 */
+        dbit(b19) /**< bit 19 */
+        dbit(b20) /**< bit 20 */
+        dbit(b21) /**< bit 21 */
+        dbit(b22) /**< bit 22 */
+        dbit(b23) /**< bit 23 */
+        dbit(b24) /**< bit 24 */
+        dbit(b25) /**< bit 25 */
+        dbit(b26) /**< bit 26 */
+        dbit(b27) /**< bit 27 */
+        dbit(b28) /**< bit 28 */
+        dbit(b29) /**< bit 29 */
+        dbit(b30) /**< bit 30 */
+        dbit(b31) /**< bit 31 */
+    };
+} BIT32;
+
+
+
+/**
+ * @brief flotante discriminado por partes
+ */
+typedef union 
+{
+    float valor; /**< valor con coma */
+struct {
+    unsigned long mantisa:23; /**< todo lo que sigue despues de la coma */
+    unsigned long exponente_d:8; /**< esponente desplazado en 127 */
+    unsigned long signo:1; /**< bit de signo */
+};    
+} IEEE_754_t;
+
+#endif
 
 #endif

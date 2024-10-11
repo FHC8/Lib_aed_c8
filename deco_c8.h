@@ -10,12 +10,14 @@
  */
 #ifndef _DECO_C8_H
 #define _DECO_C8_H
-#include "debug_c8.h"
 #include "utilidades.h"
 #include "pinio_c8.h"
-#include "recursos_win.h"
 #include "common_type_c8.h"
 #include <stdio.h>
+#ifdef test_c8
+#include "debug_c8.h"
+#include "recursos_win.h"
+#endif
 
 /**
  * @brief Decodificador binario de 2 a 4

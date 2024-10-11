@@ -11,10 +11,11 @@
 #ifndef _MUX_C8_H
 #define _MUX_C8_H
 #include "common_type_c8.h"
-#include "debug_c8.h"
 #include "pinio_c8.h"
 #include <stdio.h>
-
+#ifdef test_c8
+#include "debug_c8.h"
+#endif
 /**
  * @brief Multiplexor cuadruple de 2 vias a 1
  * 

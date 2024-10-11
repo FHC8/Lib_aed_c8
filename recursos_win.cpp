@@ -10,6 +10,7 @@
  */
 #include "recursos_win.h"
 
+#ifdef test_c8
 ConsolaColor::ConsolaColor(HANDLE consola)
 {
     miConsola = consola;
@@ -75,3 +76,4 @@ int ConsolaColor::printc(const char *formato)
     SetConsoleTextAttribute(miConsola, atributoAnterior);
     return 1;
 }
+#endif

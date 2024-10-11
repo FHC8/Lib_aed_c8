@@ -18,6 +18,8 @@ void MedioSum1bit::conectar(ENTRADA a,ENTRADA b)
 {
     salida.total = (0b11&(a+b));
 }
+
+#ifdef test_c8
 void MedioSum1bit::tablaDeVerdad()
 {
     VAR4 in;
@@ -37,6 +39,7 @@ void MedioSum1bit::salidaPorPantalla()
     printf("\n-> co r0\n    %d  %d\n",
     salida.co,salida.r0);
 }
+#endif
 
 Sum1bit::Sum1bit()
 {
@@ -47,6 +50,7 @@ void Sum1bit::conectar(ENTRADA a,ENTRADA b,ENTRADA ci)
     salida.total = (0b11&(a+b+ci));
 }
 
+#ifdef test_c8
 void Sum1bit::tablaDeVerdad()
 {
     VAR4 in;
@@ -67,6 +71,7 @@ void Sum1bit::salidaPorPantalla()
     printf("\n-> co r0\n    %d  %d\n",
     salida.co,salida.r0);
 }
+#endif
 
 Sum4bit::Sum4bit(){salida.total=0;}
 void Sum4bit::conectar(ENTRADA a,ENTRADA b)
@@ -85,6 +90,7 @@ void Sum4bit::conectar(ENTRADA a3,ENTRADA a2,ENTRADA a1,ENTRADA a0,ENTRADA b3,EN
     salida.total = (0x1F&(a+b+ci));
 }
 
+#ifdef test_c8
 void Sum4bit::tablaDeVerdad()
 {
     BIT10 in;
@@ -107,6 +113,7 @@ void Sum4bit::salidaPorPantalla()
     printf("\n-> Co R3R2R1R0\n    %d  %d %d %d %d = %d\n",
     salida.co,salida.r3,salida.r2,salida.r1,salida.r0,salida.total);
 }
+#endif
 
 Sum8bit::Sum8bit()
 {

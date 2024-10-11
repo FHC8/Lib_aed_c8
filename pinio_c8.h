@@ -17,7 +17,7 @@
  * @brief Comentar para implementacion con Arduino
  * 
  */
-#define test_c8
+// #define test_c8
 
 #ifndef test_c8
 #include <Arduino.h>
@@ -86,7 +86,7 @@
  * 
  * @param valor representa a la expresion
  */
-#define fl(valor) (valor) & 0x0001
+#define fl(valor) ((valor) & 0x0001)
 /**
  * @brief Macro para definicion de variable global
  * 
@@ -157,28 +157,28 @@
 
 
 template<int cantidadDePines>
-class Arduiniable {
+class SalidasArduiniables {
 protected:
     PIN pinSalida[cantidadDePines];
 public:
-  Arduiniable(){
+  SalidasArduiniables(){
     for(int i=0;i<cantidadDePines;i++){pinSalida[i]=0;}
+  }
+  void configurarSalidas(){
+#ifndef test_c8
+    for(int i=0;i<cantidadDePines;i++){salida(pinSalida[i]);}
+#endif
   }
   void actualizar(SALIDA bus){
     for(int i=0;i<cantidadDePines;i++){
 #ifndef test_c8
-        escribir(pinSalida[i],((bus>>i)&0x00000001));
+        escribir(pinSalida[i],fl(bus>>i));
 #else
         printf("pin: %2d -> salida: %d\n", pinSalida[i], ((bus>>i)&0x00000001));
 #endif
     }
   }
 };
-
-
-
-
-
 
 
 #endif

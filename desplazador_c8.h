@@ -49,12 +49,14 @@ class Desp{
      * @param n bits a desplazar
      * @param datos bus de entrada
      */
-    void conectar(DIRECCION dir, ENTRADA n, ENTRADA datos);
+    void conectar(DIRECCION dir, ENTRADA n, DATO datos);
     /**
      * @brief Muestra por pantalla 32 bit
      * 
      */
+#ifdef test_c8
     void salidaPorPantalla();
+#endif
 };
 
 #endif

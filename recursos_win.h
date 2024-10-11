@@ -11,10 +11,11 @@
 
 #ifndef _RECURSOS_WIN_H
 #define _RECURSOS_WIN_H
-#include <windows.h>
 #include <stdio.h>
 #include <stdarg.h>
 
+#ifdef test_c8
+#include <windows.h>
 
 /*
 Attribute	                Meaning
@@ -212,6 +213,7 @@ BACKGROUND_RED|BACKGROUND_INTENSITY)
 #define FVIOLETA5 (BACKGROUND_BLUE|\
 BACKGROUND_RED)	        	        
 
+#endif
 
 
 #endif

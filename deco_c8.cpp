@@ -22,6 +22,7 @@ void Deco2a4::conectar(unsigned int a1,unsigned int a0)
     }
 }
 
+#ifdef test_c8
 void Deco2a4::tablaDeVerdad()
 {
     VAR4 in;
@@ -70,6 +71,7 @@ void Deco2a4::salidaPorPantalla(HANDLE consola, WORD color)
     printSiUnoCon(cmd,salida.o1);printf("  ");
     printSiUnoCon(cmd,salida.o0);printf("  ");
 }
+#endif
 
 Deco3a8::Deco3a8(){salida.puerto=0;}
 void Deco3a8::conectar(unsigned int a2,unsigned int a1,unsigned int a0)
@@ -87,6 +89,7 @@ void Deco3a8::conectar(unsigned int a2,unsigned int a1,unsigned int a0)
     }
 }
 
+#ifdef test_c8
 void Deco3a8::tablaDeVerdad()
 {
     VAR4 in;
@@ -144,6 +147,7 @@ void Deco3a8::salidaPorPantalla(HANDLE consola, WORD color)
     printSiUnoCon(cmd,salida.o1);printf("  ");
     printSiUnoCon(cmd,salida.o0);printf("\n");
 }
+#endif
 
 //-------------------------------------
 //-------------------------------------
@@ -167,6 +171,8 @@ Deco7seg::Deco7seg(SALIDA pa, SALIDA pb, SALIDA pc, SALIDA pd, SALIDA pe, SALIDA
     pinSalida[2]=pe;
     pinSalida[1]=pf;
     pinSalida[0]=pg;
+
+    configurar();
 }
 
 void Deco7seg::configurar()
@@ -191,6 +197,8 @@ void Deco7seg::conectar(ENTRADA A,ENTRADA B,ENTRADA C,ENTRADA D)
         case 9: salida.port=0b1111011;break;
         default: salida.port=0b0000001;break;
     }
+
+    mostrar();
 }
 
 void Deco7seg::conectar(BIT4 entrada)

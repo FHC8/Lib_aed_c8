@@ -20,6 +20,7 @@ void MuxQ2v1::conectar(BUS I1, BUS I0, ENTRADA sel)
     salida.bus=(sel)?(I1):(I0);
 }
 
+#ifdef test_c8
 void MuxQ2v1::tablaDeVerdad()
 {
     printf("\n\n...falta terminar...\n\n");
@@ -30,3 +31,4 @@ void MuxQ2v1::salidaPorPantalla()
     printf("-> o3 o2 o1 o0 : %d %d %d %d\n",
     salida.o3,salida.o2,salida.o1,salida.o0);
 }
+#endif

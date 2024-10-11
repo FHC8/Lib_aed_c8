@@ -22,6 +22,7 @@ void Comp1bit::conectar(ENTRADA A, ENTRADA B){
     }
 }
 
+#ifdef test_c8
 void Comp1bit::tablaDeVerdad()
 {
     VAR4 in;
@@ -42,6 +43,7 @@ void Comp1bit::salidaPorPantalla()
     printf("\n-> A>B A=B A<B\n    %d   %d   %d\n",
     salida.A_Mayor_B,salida.A_Igual_B,salida.A_Menor_B);
 }
+#endif
 
 Comp4bit::Comp4bit(){}
 void Comp4bit::conectar(ENTRADA A, ENTRADA B)
@@ -62,6 +64,7 @@ void Comp4bit::conectar(ENTRADA A_3,ENTRADA A_2,ENTRADA A_1,ENTRADA A_0,ENTRADA 
 
 }
 
+#ifdef test_c8
 void Comp4bit::tablaDeVerdad()
 {
     BIT10 in;
@@ -84,3 +87,4 @@ void Comp4bit::salidaPorPantalla()
     printf("\n-> A>B A=B A<B\n    %d   %d   %d\n",
     salida.A_Mayor_B,salida.A_Igual_B,salida.A_Menor_B);
 }
+#endif

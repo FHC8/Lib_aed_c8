@@ -14,11 +14,13 @@ Desp::Desp()
 {
 }
 
-void Desp::conectar(DIRECCION dir, ENTRADA n, ENTRADA datos)
+
+void Desp::conectar(DIRECCION dir, ENTRADA n, DATO datos)
 {
     salida.valor=(dir)?(datos>>n):(datos<<n);
 }
 
+#ifdef test_c8
 void Desp::salidaPorPantalla()
 {
     char buff[33]={0};
@@ -30,3 +32,4 @@ void Desp::salidaPorPantalla()
     buff[32]='\0';
     printf("-> %s",buff);
 }
+#endif

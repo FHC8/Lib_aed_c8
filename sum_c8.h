@@ -12,8 +12,10 @@
 #define _SUM_C8_H
 #include "common_type_c8.h"
 #include "pinio_c8.h"
-#include "debug_c8.h"
 #include <stdio.h>
+#ifdef test_c8
+#include "debug_c8.h"
+#endif
 
 /**
  * @brief Medio sumador de 1 bit
@@ -112,10 +114,10 @@ class Sum1bit: public Info_c8{
  * @brief Sumador Completo de 4 bit
  * 
  */
-#ifndef test_c8
-class Sum4bit{
-#else
+#ifdef test_c8
 class Sum4bit: public Info_c8{
+#else
+class Sum4bit {
 #endif
     public :
     /**
