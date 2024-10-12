@@ -10,14 +10,9 @@
  */
 #ifndef _PINIO_C8_H
 #define _PINIO_C8_H
+#include "config_lib_aed_c8.h"
 #include "common_type_c8.h"
 #include <stdio.h>
-
-/**
- * @brief Comentar para implementacion con Arduino
- * 
- */
-// #define test_c8
 
 #ifndef test_c8
 #include <Arduino.h>
@@ -155,20 +150,65 @@
  */
 #define enBajoPin(variable) enBajo(pin##variable)
 
-
+/**
+ * @brief componente base que da funcionalidades
+ * de configuracion y actualizacion de salidas. 
+ * Destinado a ser consumida por otro componente
+ * de manera interna.
+ * 
+ * @tparam cantidadDePines a definir cuando se use
+ */
 template<int cantidadDePines>
 class SalidasArduiniables {
 protected:
-    PIN pinSalida[cantidadDePines];
+  /**
+   * @brief array con los numeros de pin de salida,
+   * desde el bit 0 a bit (cantidadDePines-1)
+   * 
+   */
+  PIN pinSalida[cantidadDePines];
 public:
   SalidasArduiniables(){
     for(int i=0;i<cantidadDePines;i++){pinSalida[i]=0;}
   }
+  /**
+   * @brief Configura todos los pines definidos como salida
+   * 
+   */
   void configurarSalidas(){
 #ifndef test_c8
     for(int i=0;i<cantidadDePines;i++){salida(pinSalida[i]);}
 #endif
   }
+  /**
+   * @brief Configura todos los pines definidos dentro del rango 
+   * como salida
+   * 
+   * @param ini pin de inicio
+   * @param fin pin final
+   */
+  void configurarSalidas(PIN ini, PIN fin){
+#ifndef test_c8
+    for(int i=ini;i<fin;i++){salida(pinSalida[i]);}
+#endif
+  }
+  void configurarSalidas(PIN pin){
+#ifndef test_c8
+    salida(pinSalida[pin]);
+#endif
+  }
+  void actualizar(SALIDA bus,PIN pin){
+#ifndef test_c8
+    escribir(pinSalida[pin],fl(bus>>pin));
+#endif
+  }
+  /**
+   * @brief pone 1 o 0 en cada pin de salida
+   * definido, segun los bits del bus de datos
+   * 
+   * @param bus cada bit saldra por cada
+   * pin de salida.
+   */
   void actualizar(SALIDA bus){
     for(int i=0;i<cantidadDePines;i++){
 #ifndef test_c8

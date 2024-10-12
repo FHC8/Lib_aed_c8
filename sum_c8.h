@@ -10,6 +10,7 @@
  */
 #ifndef _SUM_C8_H
 #define _SUM_C8_H
+#include "config_lib_aed_c8.h"
 #include "common_type_c8.h"
 #include "pinio_c8.h"
 #include <stdio.h>
@@ -114,10 +115,10 @@ class Sum1bit: public Info_c8{
  * @brief Sumador Completo de 4 bit
  * 
  */
-#ifdef test_c8
-class Sum4bit: public Info_c8{
-#else
+#ifndef test_c8
 class Sum4bit {
+#else
+class Sum4bit: public Info_c8{
 #endif
     public :
     /**

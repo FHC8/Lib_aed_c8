@@ -10,6 +10,7 @@
  */
 #ifndef _COMP_C8_H
 #define _COMP_C8_H
+#include "config_lib_aed_c8.h"
 #include "common_type_c8.h"
 #include "pinio_c8.h"
 #include <stdio.h>

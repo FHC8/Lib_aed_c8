@@ -10,9 +10,10 @@
  */
 #ifndef _DECO_C8_H
 #define _DECO_C8_H
+#include "config_lib_aed_c8.h"
 #include "utilidades.h"
-#include "pinio_c8.h"
 #include "common_type_c8.h"
+#include "pinio_c8.h"
 #include <stdio.h>
 #ifdef test_c8
 #include "debug_c8.h"

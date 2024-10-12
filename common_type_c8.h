@@ -10,7 +10,7 @@
  */
 #ifndef _COMMON_TYPE_C8_H
 #define _COMMON_TYPE_C8_H
-
+#include "config_lib_aed_c8.h"
 
 
 /**

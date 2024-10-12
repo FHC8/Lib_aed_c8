@@ -10,6 +10,7 @@
  */
 #ifndef _DEBUG_C8_H
 #define _DEBUG_C8_H
+#include "config_lib_aed_c8.h"
 #include <windows.h>
 
 /**
