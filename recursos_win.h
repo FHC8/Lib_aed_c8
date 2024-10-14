@@ -11,6 +11,7 @@
 
 #ifndef _RECURSOS_WIN_H
 #define _RECURSOS_WIN_H
+#include "config_lib_aed_c8.h"
 #include <stdio.h>
 #include <stdarg.h>
 
