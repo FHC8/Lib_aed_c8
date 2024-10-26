@@ -12,6 +12,11 @@ Deco7seg	KEYWORD1
 MedioSum1bit	KEYWORD1
 Sum1bit	KEYWORD1
 Sum4bit	KEYWORD1
+Desp	KEYWORD1
+IEEE_754_c8	KEYWORD1
+MuxQ2v1	KEYWORD1
+Comp1bit	KEYWORD1
+Comp4bit	KEYWORD1
 
 ###########################################
 # Methods and Functions (KEYWORD2)
