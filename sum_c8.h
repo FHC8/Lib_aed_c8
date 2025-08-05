@@ -194,6 +194,25 @@ class Sum4bit: public Info_c8{
          * por pantalla
          */
         void salidaPorPantalla();
+        /**
+         * @brief muestra el ultimo resultado
+         * por pantalla
+         */
+        void salidaPorPantalla(char * val_ent,char * separador);
+        /**
+         * @brief muestra los valores de salida
+         * 
+         * @param val_ent string de valores de entrada
+         */
+        void salidaPorPantalla(char* val_ent);
+        /**
+         * @brief muestra las etiquetas del bloque
+         * 
+         * @param msj_ent etiquetas de entrada
+         */
+        void mostrarEtiquetas(char * msj_ent);
+
+        void mostrarEtiquetas(char * msj_ent,char * separador);
 #endif
 };
 

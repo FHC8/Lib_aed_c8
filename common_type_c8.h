@@ -12,6 +12,13 @@
 #define _COMMON_TYPE_C8_H
 #include "config_lib_aed_c8.h"
 
+#ifdef test_c8
+#include <cstdio>
+#define ETIQUETAS(nom,msj) char nom[] = msj
+#define STR_VALORES(nom) char nom[50]
+#define STR_VALORES_N(nom,n) char nom[n]
+#define FORMATEAR(nom,format,...) snprintf(nom, sizeof(nom), format, __VA_ARGS__)
+#endif
 
 /**
  * @brief tipo de variable

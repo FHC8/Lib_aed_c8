@@ -13,11 +13,11 @@
 
 
 /**
- * @brief Comentar para implementacion con Arduino.
+ * @brief \b Comentar para implementacion con Arduino.
  * Y descomentar para compilacion en PC
  * 
  */
-// #define test_c8
+#define test_c8
 
 
 #endif
