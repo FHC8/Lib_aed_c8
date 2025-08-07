@@ -14,6 +14,8 @@
 
 #ifdef test_c8
 #include <cstdio>
+#define COLUMNAS(nom,msj) char nom[] = msj
+#define SEPARADOR(nom,msj) char nom[] = msj
 #define ETIQUETAS(nom,msj) char nom[] = msj
 #define STR_VALORES(nom) char nom[50]
 #define STR_VALORES_N(nom,n) char nom[n]

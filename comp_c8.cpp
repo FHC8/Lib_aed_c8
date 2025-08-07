@@ -87,4 +87,16 @@ void Comp4bit::salidaPorPantalla()
     printf("\n-> A>B A=B A<B\n    %d   %d   %d\n",
     salida.A_Mayor_B,salida.A_Igual_B,salida.A_Menor_B);
 }
+
+void Comp4bit::salidaPorPantalla(char * val_ent,char * separador)
+{
+    printf("%s%s%d   %d   %d\n",val_ent,separador,
+    salida.A_Mayor_B,salida.A_Igual_B,salida.A_Menor_B);
+}
+
+void Comp4bit::mostrarColumnas(char *msj_ent, char *separador)
+{
+    printf("%s%sA>B A=B A<B\n",msj_ent,separador);
+}
+
 #endif

@@ -31,4 +31,15 @@ void MuxQ2v1::salidaPorPantalla()
     printf("-> o3 o2 o1 o0 : %d %d %d %d\n",
     salida.o3,salida.o2,salida.o1,salida.o0);
 }
+
+void MuxQ2v1::salidaPorPantalla(char * val_ent,char * separador)
+{
+    printf("%s%s%d %d %d %d\n",val_ent,separador,
+    salida.o3,salida.o2,salida.o1,salida.o0);
+}
+
+void MuxQ2v1::mostrarColumnas(char *msj_ent, char *separador)
+{
+    printf("%s%so3 o2 o1 o0\n",msj_ent,separador);
+}
 #endif

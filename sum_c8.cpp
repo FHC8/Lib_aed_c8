@@ -113,21 +113,14 @@ void Sum4bit::salidaPorPantalla()
     printf("\n-> Co R3R2R1R0\n    %d  %d %d %d %d = %2d\n",
     salida.co,salida.r3,salida.r2,salida.r1,salida.r0,salida.total);
 }
+
 void Sum4bit::salidaPorPantalla(char * val_ent,char * separador)
 {
     printf("%s%s%d  %d %d %d %d = %2d\n",val_ent,separador,
     salida.co,salida.r3,salida.r2,salida.r1,salida.r0,salida.total);
 }
-void Sum4bit::salidaPorPantalla(char *val_ent)
-{
-    printf("%s    %d  %d %d %d %d = %2d\n",val_ent,
-    salida.co,salida.r3,salida.r2,salida.r1,salida.r0,salida.total);
-}
-void Sum4bit::mostrarEtiquetas(char *msj_ent)
-{
-    printf("%s -> Co R3R2R1R0\n",msj_ent);
-}
-void Sum4bit::mostrarEtiquetas(char *msj_ent, char *separador)
+
+void Sum4bit::mostrarColumnas(char *msj_ent, char *separador)
 {
     printf("%s%sCo R3R2R1R0\n",msj_ent,separador);
 }

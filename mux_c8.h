@@ -60,6 +60,23 @@ class MuxQ2v1: public Info_c8{
      * 
      */
     void salidaPorPantalla();
+    /**
+     * @brief Muestra por pantalla un Mensaje que deberian
+     * ser valores de entrada + separador + 
+     * salida por defecto.
+     * 
+     * @param val_ent 
+     * @param separador 
+     */
+    void salidaPorPantalla(char * val_ent,char * separador);
+    /**
+     * @brief Muestra por pantalla un Mensaje + separador +
+     * Columnas de salida por defecto
+     * 
+     * @param msj_ent 
+     * @param separador 
+     */
+    void mostrarColumnas(char * msj_ent,char * separador);
 #endif
 };
 
