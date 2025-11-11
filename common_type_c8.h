@@ -29,6 +29,14 @@ typedef unsigned int PIN;
 /**
  * @brief tipo de variable
  */
+typedef unsigned int ESTADO;
+/**
+ * @brief tipo de variable
+ */
+typedef unsigned int INTERNO;
+/**
+ * @brief tipo de variable
+ */
 typedef unsigned int ENTERO;
 /**
  * @brief tipo de variable
