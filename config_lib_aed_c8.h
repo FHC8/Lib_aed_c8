@@ -17,7 +17,7 @@
  * Y descomentar para compilacion en PC
  * 
  */
-#define test_c8
+// #define test_c8
 
 
 #endif

@@ -22,6 +22,8 @@
 #define FORMATEAR(nom,format,...) snprintf(nom, sizeof(nom), format, __VA_ARGS__)
 #endif
 
+#define get_bit(num,pos) ((num >> pos) & 1)
+
 /**
  * @brief tipo de variable
  */

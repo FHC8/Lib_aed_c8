@@ -11,26 +11,25 @@
 
 #ifndef _CLOCK_C8_H_
 #define _CLOCK_C8_H_
-#include "patrones_c8.h"
-#include <iostream>
-#include <algorithm>
+#include "trigger_c8.h"
+#include "config_lib_aed_c8.h"
+#ifdef test_c8
+#include "debug_c8.h"
+#include <stdio.h>
+#endif
 
-class Clock : public IObservable {
-private:
-    std::vector<IObserver*> observers;
-    unsigned int nivel;
+
+#define conectarCon(x) agregar(&x)
+
+class Clock : public Trigger {
 public:
-    void agregar(IObserver* observer) override { observers.push_back(observer); }
-    void remover(IObserver* observer) override {
-        observers.erase(std::remove(observers.begin(), observers.end(), observer), observers.end());
-    }
-    void notificar() override { for (IObserver* observer : observers) { observer->serNotificadoPor(this); } }
     // En el Evento o en la ISR
-    void setNivel(unsigned int valor) {
-        nivel = valor;
+    void setClock() {
+#ifdef test_c8
+        printf("set - clk\n");
+#endif
         notificar(); // Notificar a todos los observadores del nuevo dato
     }
 };
-
 
 #endif

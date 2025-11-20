@@ -14,6 +14,9 @@
 #include <vector>
 
 
+class IObserver;
+class IObservable;
+
 class IObserver {
 public:
     virtual void serNotificadoPor(IObservable* obserbable) = 0;
