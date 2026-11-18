@@ -26,3 +26,32 @@ void Cont4bit::notificar() {
 void Cont4bit::conectar(unsigned int Qi, IObserver *observer) {
     qt[Qi].agregar(observer);
 }
+
+BinaryEvent& Cont4bit::q(unsigned int salida){
+    return qt[salida];
+}
+
+#ifdef test_c8
+
+void Cont4bit::tablaDeVerdad()
+{
+}
+
+void Cont4bit::salidaPorPantalla()
+{
+    printf("\n-> Co Q3Q2Q1Q0\n    %d  %d %d %d %d = %2d\n",
+    salida.co,salida.q3,salida.q2,salida.q1,salida.q0,salida.cuenta);
+}
+
+void Cont4bit::salidaPorPantalla(char *val_ent, char *separador)
+{
+    printf("%s%s%d  %d %d %d %d = %2d\n",val_ent,separador,
+    salida.co,salida.q3,salida.q2,salida.q1,salida.q0,salida.cuenta);
+}
+
+void Cont4bit::mostrarColumnas(char *msj_ent, char *separador)
+{
+    printf("%s%sCo Q3Q2Q1Q0\n",msj_ent,separador);
+}
+
+#endif

@@ -232,6 +232,7 @@ class Sum4bit: public Info_c8{
  * si no se hace, no se puede usar el componente.
  * 
  */
+
 class Sum8bit{
     public:
         union{
@@ -266,5 +267,51 @@ class Sum8bit{
          */
         void conectar(ENTRADA a, ENTRADA b, ENTRADA ci);
 };
+
+
+class Sum16bit{
+    public:
+        union{
+            port(total)
+            struct{
+                dport(resultado,16)
+                dbit(carry)
+            };
+            struct{
+                dbit(r0)
+                dbit(r1)
+                dbit(r2)
+                dbit(r3)
+                dbit(r4)
+                dbit(r5)
+                dbit(r6)
+                dbit(r7)
+                dbit(r8)
+                dbit(r9)
+                dbit(r10)
+                dbit(r11)
+                dbit(r12)
+                dbit(r13)
+                dbit(r14)
+                dbit(r15)
+                dbit(co)
+            };
+        }salida;
+        /**
+         * @brief Constructor Sumador 8bit
+         * 
+         */
+        Sum16bit();
+        /**
+         * @brief Conecta las entradas al bloque
+         * 
+         * @param a ENTRADA
+         * @param b ENTRADA
+         * @param ci ENTRADA
+         */
+        void conectar(ENTRADA a, ENTRADA b, ENTRADA ci);
+};
+
+
 
 #endif
