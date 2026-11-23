@@ -11,6 +11,7 @@
 
 #ifndef _CLOCK_EXTERNO_H_
 #define _CLOCK_EXTERNO_H_
+#ifdef test_c8
 #include <Arduino.h>
 #include <trigger_c8.h>
 #include <SimplyAtomic.h>
@@ -54,5 +55,6 @@ public:
     void actualizarClock();
 };
 
+#endif
 #endif
 

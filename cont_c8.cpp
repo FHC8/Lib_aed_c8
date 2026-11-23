@@ -55,3 +55,30 @@ void Cont4bit::mostrarColumnas(char *msj_ent, char *separador)
 }
 
 #endif
+
+// Cont16bit::Cont16bit(){ salida.cuenta=0; }
+
+// BinaryEvent& Cont16bit::q(unsigned int salida){
+//     unsigned int i=0;
+//     static unsigned int u=0;
+//     if(cant==0){//no tiene ninguno, asigna un trigger
+//         qi[0]=salida; cant++;
+//     } else {//lo busca
+//         for(i=0; i<cant && qi[i]!=salida; i++)
+
+//         if(i>=cant){// NO lo encontro
+//             if(i<MAX_SALIDAS){// Hay libres 
+//                 qi[i]=salida; cant++;
+//             } else {// Todos ocupados
+//                 qi[u]=salida; u++;
+//                 if(u==MAX_SALIDAS){u=0;}
+//             }
+//         }
+
+//     }
+
+//     return qt[i];
+// }
+
+
+

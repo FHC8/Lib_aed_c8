@@ -136,3 +136,11 @@ void Sum8bit::conectar(ENTRADA a, ENTRADA b, ENTRADA ci)
     salida.total= (0x1FF&(a+b+ci));
 }
 
+Sum16bit::Sum16bit(){
+    salida.total=0;
+}
+
+void Sum16bit::conectar(ENTRADA a, ENTRADA b, ENTRADA ci){
+    salida.total= (0x1FFFF&(a+b+ci));
+}
+

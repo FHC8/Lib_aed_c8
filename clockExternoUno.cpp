@@ -1,5 +1,6 @@
 #include "clockExternoUno.h"
 
+#ifdef test_c8
 
 ClockExternoUno::ClockExternoUno(uint8_t pin_n, int mode) {
     pinMode(pin_n,INPUT);   // pinMode(pin_n,INPUT_PULLUP);
@@ -20,3 +21,4 @@ void ClockExternoUno::actualizarClock() {
     }
 }
 
+#endif

@@ -20,9 +20,9 @@
 #include "debug_c8.h"
 #endif
 
-// // extern unsigned int contador;
-// // extern MSG msg;
-// // extern UINT_PTR timerId;
+extern unsigned int contador;
+extern MSG msg;
+extern UINT_PTR timerId;
 
 // /**
 //  * @brief Sumador Completo de 4 bit

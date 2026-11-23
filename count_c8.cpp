@@ -2,14 +2,14 @@
 
 #ifdef test_c8
 
-// MSG msg;
-// unsigned int contador=0;
+MSG msg;
+unsigned int contador=0;
 
-// void CALLBACK TimerProc(HWND, UINT, UINT_PTR, DWORD) {
-//     contador++;
-//     // std::cout << "Interrupcion periodica ejecutada." << std::endl;
-//     printf("Interrupcion periodica ejecutada.\n");
-// }
+void CALLBACK TimerProc(HWND, UINT, UINT_PTR, DWORD) {
+    contador++;
+    // std::cout << "Interrupcion periodica ejecutada." << std::endl;
+    printf("Interrupcion periodica ejecutada.\n");
+}
 
 // // void CALLBACK Cont4bit::tickProc(HWND, UINT, UINT_PTR, DWORD) {
 // //     salida.cuenta++;
@@ -17,7 +17,7 @@
 // //     printf("Interrupcion periodica ejecutada.\n");
 // // }
 
-// UINT_PTR timerId = SetTimer(NULL, 0, 1000, TimerProc); // 1000 ms = 1 segundo
+UINT_PTR timerId = SetTimer(NULL, 0, 1000, TimerProc); // 1000 ms = 1 segundo
 
 #endif
 
