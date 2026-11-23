@@ -56,29 +56,37 @@ void Cont4bit::mostrarColumnas(char *msj_ent, char *separador)
 
 #endif
 
-// Cont16bit::Cont16bit(){ salida.cuenta=0; }
+Cont16bit::Cont16bit(){ salida.cuenta=0; }
 
-// BinaryEvent& Cont16bit::q(unsigned int salida){
-//     unsigned int i=0;
-//     static unsigned int u=0;
-//     if(cant==0){//no tiene ninguno, asigna un trigger
-//         qi[0]=salida; cant++;
-//     } else {//lo busca
-//         for(i=0; i<cant && qi[i]!=salida; i++)
+BinaryEvent& Cont16bit::q(unsigned int salida){
+    unsigned int i = idx.indice(salida);
+    if(!idx.esValido(i)){i = idx.poner(salida);}
+    return qt[i];
+}
 
-//         if(i>=cant){// NO lo encontro
-//             if(i<MAX_SALIDAS){// Hay libres 
-//                 qi[i]=salida; cant++;
-//             } else {// Todos ocupados
-//                 qi[u]=salida; u++;
-//                 if(u==MAX_SALIDAS){u=0;}
-//             }
-//         }
+void Cont16bit::serNotificadoPor(IObservable* obserbable) {
+    salida.cuenta++;
+#ifdef test_c8
+    printf("- actualiza cuenta: %d\n",salida.cuenta);
+#endif
+    notificar();
+}
 
-//     }
+void Cont16bit::notificar() {
+    unsigned int val=0;
+    unsigned int qi=idx.elems();
+    for(int i=0; i<qi; i++){
+        val = ((salida.cuenta>>idx.valor(i))&1);
+        if(qt[i].evaluar(val)){
+    #ifdef test_c8
+            printf("-- q%d: flanco ASCENDENTE\n",i);
+    #endif 
+            qt[i].notificar();
+        }
+    }
+}
 
-//     return qt[i];
-// }
-
-
+void Cont16bit::conectar(unsigned int Qi, IObserver *observer) {
+    q(Qi).agregar(observer);    // qt[Qi].agregar(observer);
+}
 

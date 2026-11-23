@@ -24,23 +24,26 @@ private:
     unsigned int cant=0;
 public:
     c_buffer(){}
+    unsigned int elems(void){ return cant; }
     unsigned int hayLugar(void){ return (cant<max); }
     unsigned int hayValores(void){ return (cant>0); }
     unsigned int esValido(unsigned int idx){ return (idx<cant); }
-    void poner(unsigned int valor){
+    unsigned int poner(unsigned int valor){
         static unsigned int u=0;
+        unsigned int i;
         if(hayLugar()){
-            array[cant]=valor; cant++;
+            array[cant]=valor; i=cant; cant++;
         }else{
-            array[u]=valor;
-            u=(u<max)?u+1:0;
+            array[u]=valor; i=u; u=(u<max)?u+1:0;
         }
+        return i;
     }
     unsigned int indice(unsigned int valor){
         int i;
         for(i=0; i<cant && array[i]!=valor; i++);
         return i;
     }
+    unsigned int valor(unsigned int idx){ return array[idx]; }
 #ifdef test_c8
     void mostrar(void){
         int i;
